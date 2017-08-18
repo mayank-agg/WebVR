@@ -14,7 +14,7 @@ var markURL_OFF = 'http://i.imgur.com/6Pae8y7.png';
 var mark1 = VR.image(markURL_OFF);
 
 // Import Hatch logo, which follows the camera
-var logo = VR.camera.image('http://i.imgur.com/0coNQ7l.png');
+var logo = VR.camera.image('content/logo.jpg');
 
 // Create a aim point, which follows the camera. 
 var focus = VR.camera.torus({radius:0.02,
@@ -23,7 +23,7 @@ var focus = VR.camera.torus({radius:0.02,
                }).moveTo(0,0,-4);
 
 // Create Visualization text, which follows the camera.
-var visualization = VR.camera.text({font: '20pt sans-serif', text:"3D VR Tour"});
+var visualization = VR.camera.text({font: '20pt sans-serif', text:"VR Tour: Beta 01"});
 
 // Create Next text.
 var next = VR.text({font: '45pt sans-serif', text:"Next"});
@@ -31,6 +31,7 @@ var next = VR.text({font: '45pt sans-serif', text:"Next"});
 // Other variables
 var markHoverSize = 0.6;
 var markDefaultSize = 0.5;
+var logoDefualtSize = 0.2;
 
 // variable that keeps track of the current image index 
 var imageIndex = 0;
@@ -62,9 +63,9 @@ mark1.material.transparent=true;
 mark1.material.alphaTest=0.5;
 
 // move logo, and apply alpha channels to the textures;
-//logo.moveTo(3.5,-2,-4);
-//logo.material.transparent=true;
-//logo.material.alphaTest=0.5;
+logo.setScale(logoDefualtSize).moveTo(3.4,-2,-4);
+logo.material.transparent=true;
+logo.material.alphaTest=0.5;
 
 // move "next" under the logo, and apply alpha channels to the texture;
 next.moveTo(0,-1.5,0);
@@ -72,7 +73,7 @@ next.material.transparent=true;
 next.material.alphaTest=0.5;
 
 // move "visualization", and apply alpha channels to the texture;
-visualization.moveTo(-3.5,-2,-4);
+visualization.moveTo(3.95,-2.08,-4);
 visualization.material.transparent=true;
 visualization.material.alphaTest=0.5;
 
